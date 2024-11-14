@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Manages Relationships{% endblock %}
+{% block content %}
+<h1>Department Manager</h1>
+<a href="{{ url_for('create_manages') }}" class="button-link">Add New Manages Relationship</a>
+<ul>
+    {% for manage in manages %}
+        <li>Professor ID: {{ manage[0] }} - Department ID: {{ manage[1] }}
+            <a href="{{ url_for('update_manages', professor_id=manage[0], department_id=manage[1]) }}">Edit</a>
+            <form action="{{ url_for('delete_manages', professor_id=manage[0], department_id=manage[1]) }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

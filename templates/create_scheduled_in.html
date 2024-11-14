@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Create Scheduled Course{% endblock %}
+{% block content %}
+<h1>Create Scheduled Course</h1>
+<form action="{{ url_for('create_scheduled_in') }}" method="post">
+    <input type="number" name="course_id" placeholder="Course ID" required>
+    <input type="text" name="room_number" placeholder="Room Number" required>
+    <input type="text" name="schedule_time" placeholder="Time (e.g., 09:00-10:00)" required>
+    <input type="text" name="days_of_week" placeholder="Days (e.g., MWF)" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

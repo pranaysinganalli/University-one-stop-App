@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Create Classroom{% endblock %}
+{% block content %}
+<h1>Create Classroom</h1>
+<form action="{{ url_for('create_classroom') }}" method="post">
+    <input type="text" name="room_number" placeholder="Room Number" required>
+    <input type="text" name="building_name" placeholder="Building Name" required>
+    <input type="number" name="capacity" placeholder="Capacity" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

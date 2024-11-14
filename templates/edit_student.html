@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Edit Student{% endblock %}
+{% block content %}
+<h1>Edit Student</h1>
+<form action="{{ url_for('update_student', student_id=student[0]) }}" method="post">
+    <input type="text" name="first_name" value="{{ student[1] }}" required>
+    <input type="text" name="last_name" value="{{ student[2] }}" required>
+    <input type="date" name="date_of_birth" value="{{ student[3] }}" required>
+    <input type="email" name="email" value="{{ student[4] }}" required>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

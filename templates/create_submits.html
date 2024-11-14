@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Create Submission{% endblock %}
+{% block content %}
+<h1>Create Submission</h1>
+<form action="{{ url_for('create_submits') }}" method="post">
+    <input type="number" name="student_id" placeholder="Student ID" required>
+    <input type="number" name="assignment_id" placeholder="Assignment ID" required>
+    <input type="date" name="submission_date" placeholder="Submission Date" required>
+    <input type="number" name="marks_obtained" placeholder="Marks Obtained" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

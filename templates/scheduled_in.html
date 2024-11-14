@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Scheduled Courses{% endblock %}
+{% block content %}
+<h1>Scheduled Courses</h1>
+<a href="{{ url_for('create_scheduled_in') }}" class="button-link">Add New Scheduled Course</a>
+<ul>
+    {% for scheduled in scheduled_in %}
+        <li>Course ID: {{ scheduled[0] }} - Room: {{ scheduled[1] }} - Time: {{ scheduled[2] }} - Days: {{ scheduled[3] }}
+            <a href="{{ url_for('update_scheduled_in', course_id=scheduled[0], room_number=scheduled[1]) }}">Edit</a>
+            <form action="{{ url_for('delete_scheduled_in', course_id=scheduled[0], room_number=scheduled[1]) }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

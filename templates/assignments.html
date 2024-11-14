@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Assignments{% endblock %}
+{% block content %}
+<h1>Assignments</h1>
+<a href="{{ url_for('create_assignment') }}" class="button-link">Add New Assignment</a>
+<ul>
+    {% for assignment in assignments %}
+        <li>{{ assignment[1] }} - Due: {{ assignment[2] }} - Marks: {{ assignment[3] }}
+            <a href="{{ url_for('update_assignment', assignment_id=assignment[0]) }}">Edit</a>
+            <form action="{{ url_for('delete_assignment', assignment_id=assignment[0]) }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Edit Manages Relationship{% endblock %}
+{% block content %}
+<h1>Edit Manages Relationship</h1>
+<form action="{{ url_for('update_manages', professor_id=manages[0], department_id=manages[1]) }}" method="post">
+    <input type="number" name="professor_id" value="{{ manages[0] }}" required>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

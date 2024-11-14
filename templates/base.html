@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1 >University Database Management App</h1>
+    
+    <nav>
+        <a href="{{ url_for('list_students') }}">Students</a>
+        <a href="{{ url_for('list_courses') }}">Courses</a>
+        <a href="{{ url_for('list_professors') }}">Professors</a>
+        <a href="{{ url_for('list_departments') }}">Departments</a>
+        <a href="{{ url_for('list_assignments') }}">Assignments</a>
+        <a href="{{ url_for('list_classrooms') }}">Classrooms</a>
+        
+        <!-- Add links for other entities here -->
+    </nav>
+    <nav>
+        <a href="{{ url_for('list_teaches') }}">Teacher-Course records</a>
+        <a href="{{ url_for('list_submits') }}">Students Submissions records</a>
+    <a href="{{ url_for('list_manages') }}">Department Manager records</a>
+    <a href="{{ url_for('list_scheduled_in') }}">Course-Class records</a>
+    </nav>
+    <div class="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+    <!--add a byline at the bottom right-->
+    <footer>
+        <p>Created by: <a href="https://www.linkedin.com/in/pranay-singanalli-2aba0b215/">Pranay Singanalli</a></p>
+    </footer>
+</body>
+</html>

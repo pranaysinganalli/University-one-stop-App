@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Create Assignment{% endblock %}
+{% block content %}
+<h1>Create Assignment</h1>
+<form action="{{ url_for('create_assignment') }}" method="post">
+    <input type="text" name="assignment_id" placeholder="Assignment ID" required>
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="date" name="due_date" placeholder="Due Date" required>
+    <input type="number" name="total_marks" placeholder="Total Marks" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

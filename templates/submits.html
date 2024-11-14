@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Submissions{% endblock %}
+{% block content %}
+<h1>Submissions</h1>
+<a href="{{ url_for('create_submits') }}" class="button-link">Add New Submission</a>
+<ul>
+    {% for submit in submits %}
+        <li>Student ID: {{ submit[0] }} - Assignment ID: {{ submit[1] }} - Submission Date: {{ submit[2].strftime('%Y-%m-%d') }} - Marks: {{ submit[3] }}
+            <a href="{{ url_for('update_submits', student_id=submit[0], assignment_id=submit[1]) }}">Edit</a>
+            <form action="{{ url_for('delete_submits', student_id=submit[0], assignment_id=submit[1]) }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

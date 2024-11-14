@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Professors{% endblock %}
+{% block content %}
+<h1>Professors</h1>
+<a href="{{ url_for('create_professor') }}" class="button-link">Add New Professor</a>
+<!--insert a new line-->
+<p>Total Professors: {{ professors|length }}</p>
+<ul>
+    {% for professor in professors %}
+        <li>{{ professor[1] }} {{ professor[2] }} - Dept: {{ professor[3] }} - INR {{ professor[4] }}
+            <a href="{{ url_for('update_professor', professor_id=professor[0]) }}">Edit</a>
+            <form action="{{ url_for('delete_professor', professor_id=professor[0]) }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

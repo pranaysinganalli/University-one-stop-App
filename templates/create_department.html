@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Create Department{% endblock %}
+{% block content %}
+<h1>Create Department</h1>
+<form action="{{ url_for('create_department') }}" method="post">
+    <input type="text" name="department_id" placeholder="Department ID" required>
+    <input type="text" name="name" placeholder="Department Name" required>
+    <input type="text" name="strength" placeholder="Department strength" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

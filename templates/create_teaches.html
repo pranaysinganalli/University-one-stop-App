@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Create Teaches Relationship{% endblock %}
+{% block content %}
+<h1>Create Teaches Relationship</h1>
+<form action="{{ url_for('create_teaches') }}" method="post">
+    <input type="number" name="professor_id" placeholder="Professor ID" required>
+    <input type="number" name="course_id" placeholder="Course ID" required>
+    <input type="text" name="semester" placeholder="Semester" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

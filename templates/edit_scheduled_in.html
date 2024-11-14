@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Edit Scheduled Course{% endblock %}
+{% block content %}
+<h1>Edit Scheduled Course</h1>
+<form action="{{ url_for('update_scheduled_in', course_id=scheduled[0], room_number=scheduled[1]) }}" method="post">
+    <input type="text" name="schedule_time" value="{{ scheduled[2] }}" required>
+    <input type="text" name="days_of_week" value="{{ scheduled[3] }}" required>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

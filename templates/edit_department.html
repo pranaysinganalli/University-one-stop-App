@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Edit Department{% endblock %}
+{% block content %}
+<h1>Edit Department</h1>
+<form action="{{ url_for('update_department', department_id=department[0]) }}" method="post">
+    <input type="text" name="name" value="{{ department[1] }}" required>
+    <input type="number" name="strength" value="{{ department[2] }}" required>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

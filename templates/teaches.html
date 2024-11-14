@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Course taught by Professors{% endblock %}
+{% block content %}
+<h1>Course taught by Professors</h1>
+<a href="{{ url_for('create_teaches') }}" class="button-link">Add New Teaches Relationship</a>
+<ul>
+    {% for teach in teaches %}
+        <li>Professor ID: {{ teach[0] }} - Course ID: {{ teach[1] }} - Semester: {{ teach[2] }}
+            <a href="{{ url_for('update_teaches', professor_id=teach[0], course_id=teach[1]) }}">Edit</a>
+            <form action="{{ url_for('delete_teaches', professor_id=teach[0], course_id=teach[1]) }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

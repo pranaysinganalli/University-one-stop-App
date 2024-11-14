@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Create Manages Relationship{% endblock %}
+{% block content %}
+<h1>Create Manages Relationship</h1>
+<form action="{{ url_for('create_manages') }}" method="post">
+    <input type="number" name="professor_id" placeholder="Professor ID" required>
+    <input type="number" name="department_id" placeholder="Department ID" required>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
