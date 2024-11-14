@@ -1,4 +1,4 @@
-**University Course Database Management System**
+**University Course Database Management System**  
 A Flask-based web application for managing a university's course database, built with Python and SQL. This system allows efficient management of various entities, including students, professors, courses, assignments, and classrooms, along with their complex relationships.
 
 The application uses cx_Oracle to interact with an Oracle database, enabling CRUD operations and seamless data management across multiple tables. It provides an intuitive interface for users to add, update, view, and delete records, making it a valuable tool for academic administration.
