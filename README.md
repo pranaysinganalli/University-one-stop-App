@@ -21,5 +21,3 @@ Frontend: HTML, CSS, JavaScript (Bootstrap for styling)
 Install dependencies from requirements.txt.  
 Set up an Oracle Database and configure connection parameters.  
 Run the Flask app and access the web interface.  
-  
-This project provides a robust and flexible foundation for academic data management in a university setting.
